@@ -4,7 +4,7 @@ import type { Variants } from 'framer-motion';
 
 const bentoCategories = [
   {
-    title: 'FRONTEND ARCHITECTURE',
+    title: 'FRONTEND DEVELOPER',
     badge: 'CORE PILLAR',
     items: ['React.js', 'React Native', 'Tailwind CSS', 'Electron.js'],
     description: 'Specialized in building high-performance client applications, custom component libraries, and immersive desktop/mobile interfaces.',
@@ -12,7 +12,7 @@ const bentoCategories = [
     colSpan: 'lg:col-span-7',
   },
   {
-    title: 'DISTRIBUTED BACKEND',
+    title: 'BACKEND DEVELOPER',
     badge: 'HIGH CONCURRENCY',
     items: ['Node.js', 'Express.js', 'Spring Boot', 'Docker', 'Redis'],
     description: 'Engineered RESTful APIs, JWT role-based access control, caching layers, and multi-tenant SaaS backend isolation.',
@@ -20,20 +20,28 @@ const bentoCategories = [
     colSpan: 'lg:col-span-5',
   },
   {
-    title: 'DATA PLATFORMS',
+    title: 'WEB DEVELOPER',
     badge: 'PERSISTENCE',
-    items: ['MongoDB Atlas', 'PostgreSQL', 'MySQL'],
-    description: 'Designing resilient relational and document schemas with optimized indexing and transaction isolation.',
+    items: ['MongoDB Atlas', 'PostgreSQL', 'MySQL', 'REST APIs'],
+    description: 'Designing resilient relational and document schemas with optimized indexing, transaction isolation, and seamless web integrations.',
     stat: 'ACID & NOSQL',
     colSpan: 'lg:col-span-5',
   },
   {
-    title: 'ALGORITHMS & MACHINE LEARNING',
+    title: 'FULLSTACK DEVELOPER',
     badge: 'INTELLIGENCE',
     items: ['C++', 'Python', 'Java', 'scikit-learn', 'OpenAI API'],
-    description: '1200+ algorithm problems solved. Applied Random Forest classifiers for real-time risk heatmaps and NLP policy analyzers.',
+    description: 'End-to-end application development combined with algorithm problem-solving. Applied machine learning models for real-time risk heatmaps and NLP policy analyzers.',
     stat: '1200+ SOLVED',
     colSpan: 'lg:col-span-7',
+  },
+  {
+    title: 'DATA ENGINEER',
+    badge: 'PIPELINES & ANALYTICS',
+    items: ['Python', 'SQL', 'PostgreSQL', 'ETL Pipelines', 'Database Modeling'],
+    description: 'Focused on foundational data engineering concepts, Python data structures, relational database architectures, and structured data pipelines.',
+    stat: 'SCALABLE DATA',
+    colSpan: 'lg:col-span-12',
   },
 ];
 

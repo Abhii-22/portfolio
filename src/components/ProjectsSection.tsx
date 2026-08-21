@@ -15,97 +15,148 @@ interface Project {
 const projects: Project[] = [
   {
     number: '01',
-    title: 'PolicyGuard AI',
-    category: 'AI / LEGAL-TECH PLATFORM',
+    title: 'Face Recognition Attendance System',
+    category: 'PYTHON / COMPUTER VISION',
     description:
-      'AI-powered platform engineered for automated privacy policy analysis and legal contract auditing across web, desktop, and mobile. Implements NLP extraction, real-time risk alert detection, and generative risk score intelligence.',
-    githubUrl: 'https://github.com/lohithadamisetti123',
+      'Built a Python-based system that automates attendance tracking using facial recognition. Implemented face encoding for numerical representation and matching against a database for secure identity verification with real-time processing optimization.',
+    githubUrl: '/',
     tech: [
-      'React.js',
-      'React Native',
-      'Electron.js',
-      'Node.js',
-      'Express.js',
-      'MongoDB Atlas',
-      'OpenAI API',
-      'Prompt Eng',
-      'NLP',
-      'Docker',
-      'JWT',
+      'Python',
+      'OpenCV',
+      'Face Recognition',
+      'NumPy',
+      'Database',
+      'Computer Vision',
     ],
     metrics: [
-      { label: 'PLATFORMS', value: 'Web, Mobile, Desktop' },
-      { label: 'ENGINE', value: 'OpenAI NLP / GPT' },
-      { label: 'PIPELINE', value: 'Automated Scoring' },
+      { label: 'SYSTEM', value: 'Automated Tracking' },
+      { label: 'PROCESSING', value: 'Real-Time' },
+      { label: 'VERIFICATION', value: 'Face Encoding' },
     ],
   },
   {
     number: '02',
-    title: 'Software Release Risk Heatmap',
-    category: 'MACHINE LEARNING / DEV PLATFORM',
+    title: 'Smart Door Lock System',
+    category: 'IOT / EMBEDDED SYSTEMS',
     description:
-      'Full-stack predictive release management platform utilizing Machine Learning. Implements a trained Random Forest classifier to categorize release stability from Low to Critical risk, rendered over a live interactive team heatmap.',
-    githubUrl: 'https://github.com/lohithadamisetti123',
+      'Developed a secure access control system using Raspberry Pi and a deep learning camera. Enabled real-time face detection and matching against stored encodings with integrated voice recognition as a secondary verification layer.',
+    githubUrl: '/',
     tech: [
-      'React.js',
-      'TypeScript',
+      'Raspberry Pi',
       'Python',
-      'FastAPI',
-      'scikit-learn',
-      'PostgreSQL',
-      'Tailwind CSS',
-      'REST APIs',
-      'JWT',
+      'Deep Learning',
+      'Face Recognition',
+      'Voice Recognition',
+      'IoT',
     ],
     metrics: [
-      { label: 'MODEL', value: 'Random Forest' },
-      { label: 'ACCURACY', value: 'High Precision' },
-      { label: 'DASHBOARD', value: 'Live Risk Heatmap' },
+      { label: 'HARDWARE', value: 'Raspberry Pi' },
+      { label: 'SECURITY', value: 'Dual-Layer (Face+Voice)' },
+      { label: 'DETECTION', value: 'Real-Time' },
     ],
   },
   {
     number: '03',
-    title: 'Multi-Tenant SaaS Platform',
-    category: 'CLOUD / DISTRIBUTED SYSTEM',
+    title: 'Emotion Recognition System',
+    category: 'MACHINE LEARNING / C++',
     description:
-      'Enterprise-grade multi-tenant platform built for unified management of teams, projects, and execution lifecycles. Architected with strict tenant data isolation, granular Role-Based Access Control (RBAC), and containerized deployments.',
-    githubUrl: 'https://github.com/lohithadamisetti123',
+      'Designed a Python and C++ model to detect human emotions from facial expressions. Programmed dynamic responses such as UI color changes and alerts by fine-tuning CNN-based emotion classification models.',
+    githubUrl: '/',
     tech: [
-      'Node.js',
-      'Express.js',
-      'PostgreSQL',
-      'React',
-      'Docker',
-      'JWT',
-      'RBAC',
-      'REST APIs',
+      'Python',
+      'C++',
+      'Machine Learning',
+      'CNN',
+      'OpenCV',
+      'Deep Learning',
     ],
     metrics: [
-      { label: 'ARCHITECTURE', value: 'Multi-Tenant' },
-      { label: 'SECURITY', value: 'RBAC Isolation' },
-      { label: 'CONTAINERS', value: 'Docker Compose' },
+      { label: 'MODELS', value: 'CNN Classification' },
+      { label: 'LANGUAGES', value: 'Python & C++' },
+      { label: 'ACCURACY', value: 'High Precision' },
     ],
   },
   {
     number: '04',
-    title: 'Payment Gateway with Hosted Checkout',
-    category: 'FINTECH / PAYMENT SYSTEMS',
+    title: 'Automated Resume Builder',
+    category: 'WEB APPLICATION / PRODUCTIVITY',
     description:
-      'End-to-end hosted payment gateway infrastructure supporting seamless merchant order generation, multi-currency processing, and secure consumer checkout via UPI and Cards with webhook transaction verification.',
-    githubUrl: 'https://github.com/lohithadamisetti123',
+      'Created a user-friendly web application that generates professional resumes from form inputs. Offered customizable templates and PDF/DOCX export options, reducing resume creation time by 80% through automated formatting.',
+    githubUrl: '/',
     tech: [
-      'Node.js',
-      'Spring Boot',
-      'PostgreSQL',
-      'React',
-      'Docker',
-      'REST APIs',
-      'UPI / Card Integrations',
+      'React.js',
+      'JavaScript',
+      'HTML5',
+      'CSS3',
+      'PDF / DOCX Export',
+      'Form Validation',
     ],
     metrics: [
-      { label: 'PROTOCOLS', value: 'UPI & Cards' },
-      { label: 'BACKEND', value: 'Spring Boot + Node' },
-      { label: 'DATABASE', value: 'ACID PostgreSQL' },
+      { label: 'EFFICIENCY', value: '80% Time Reduction' },
+      { label: 'EXPORTS', value: 'PDF & DOCX' },
+      { label: 'TEMPLATES', value: 'Customizable' },
+    ],
+  },
+  {
+    number: '05',
+    title: 'Pet Adoption Web Application',
+    category: 'FULL-STACK / MERN APP',
+    description:
+      'Built a full-stack pet adoption website using the MERN stack. Added features for pet search, adoption requests, and user login, designed with a responsive UI using React.js and RESTful APIs.',
+    githubUrl: '/',
+    tech: [
+      'MongoDB',
+      'Express.js',
+      'React.js',
+      'Node.js',
+      'REST APIs',
+      'Tailwind CSS',
+    ],
+    metrics: [
+      { label: 'STACK', value: 'MERN Stack' },
+      { label: 'FEATURES', value: 'Search & Adoption' },
+      { label: 'INTERFACE', value: 'Responsive UI' },
+    ],
+  },
+  {
+    number: '06',
+    title: 'PG Search Web Application',
+    category: 'WEB PLATFORM / REAL ESTATE',
+    description:
+      'Built a PG Search web app using React.js with dynamic property listings. Added advanced filters for location, price, and amenities to improve search accuracy, creating a responsive and user-friendly interface for smooth browsing.',
+    githubUrl: '/',
+    tech: [
+      'React.js',
+      'JavaScript',
+      'REST APIs',
+      'CSS3',
+      'Responsive Design',
+    ],
+    metrics: [
+      { label: 'PLATFORM', value: 'React.js Web App' },
+      { label: 'FILTERS', value: 'Location & Price' },
+      { label: 'BROWSING', value: 'Smooth & Responsive' },
+    ],
+  },
+  {
+    number: '07',
+    title: 'Employee Attendance System',
+    category: 'ENTERPRISE / AUTOMATION',
+    description:
+      'Developed a dedicated employee attendance tracking and management system featuring automated logging, verification, and secure database management to streamline workforce operations and daily attendance reports.',
+    githubUrl: '/',
+    tech: [
+      'Python',
+      'Node.js',
+      'Express.js',
+      'MongoDB',
+      'REST APIs',
+      'Automation',
+    ],
+    metrics: [
+      { label: 'SOLUTION', value: 'Workforce Tracking' },
+      { label: 'AUTOMATION', value: 'Streamlined Logging' },
+      { label: 'MANAGEMENT', value: 'Secure Database' },
     ],
   },
 ];
@@ -168,16 +219,15 @@ export const ProjectsSection: React.FC = () => {
         </motion.div>
 
         {/* React Bits Stacking Deck */}
-        {/* React Bits Stacking Deck */}
-<ScrollStack
-  itemDistance={20}
-  itemScale={0.035}
-  itemStackDistance={28}
-  stackPosition="15%"
-  scaleEndPosition="6%"
-  baseScale={0.88}
-  useWindowScroll={true}
->
+        <ScrollStack
+          itemDistance={20}
+          itemScale={0.035}
+          itemStackDistance={28}
+          stackPosition="15%"
+          scaleEndPosition="6%"
+          baseScale={0.88}
+          useWindowScroll={true}
+        >
           {projects.map((project) => (
             <ScrollStackItem key={project.title}>
               <div className="relative w-full rounded-2xl border border-[#8C6D4F]/50 bg-[#0E0C0A] p-8 sm:p-12 shadow-[0_25px_70px_rgba(0,0,0,0.98)] group overflow-hidden transition-colors duration-500 hover:border-[#D4AF37]">

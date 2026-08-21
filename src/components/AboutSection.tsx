@@ -1,7 +1,7 @@
 import React, { useRef, useState } from 'react';
 import { motion, useMotionValue, useTransform, useSpring } from 'framer-motion';
 import type { Variants } from 'framer-motion';
-import aboutImg from '../assets/about.png';
+import aboutImg from '../assets/abhi1.jpeg';
 
 const containerVariants: Variants = {
   hidden: { opacity: 0 },
@@ -134,7 +134,7 @@ export const AboutSection: React.FC = () => {
               className="text-xs sm:text-sm md:text-[14.5px] font-light text-[#B3A497] leading-[1.85] tracking-wide mb-10 max-w-xl"
               style={{ fontFamily: "'Montserrat', sans-serif" }}
             >
-              I'm <span className="text-[#F3DBB3] font-medium">Damisetti Shamya Lohitha</span>, a Full Stack Developer and Data Science student specializing in building scalable web architectures, AI-integrated platforms, and refined digital experiences. With a strong algorithmic foundation and a focus on clean engineering, I turn complex requirements into impactful products.
+              I'm <span className="text-[#F3DBB3] font-medium">ABHISHEK E B</span>, A Frontend Developer, Full Stack Developer, Web Developer, and Data Engineer specializing in building responsive web applications, scalable architectures, data-driven solutions, and refined digital experiences. With a strong foundation in programming, problem-solving, and modern technologies, I transform complex requirements into clean, efficient, and impactful digital products.
             </motion.p>
 
             {/* Concise 4-Item Achievement Metrics Grid */}
@@ -285,7 +285,7 @@ export const AboutSection: React.FC = () => {
                     className="text-3xl text-[#F2D8A7] drop-shadow-[0_0_12px_rgba(242,216,167,0.5)] transition-colors duration-300 group-hover:text-white"
                     style={{ fontFamily: "'Herr Von Muellerhoff', cursive" }}
                   >
-                    Lohitha
+                    ABHISHEK E B
                   </span>
                 </div>
               </div>

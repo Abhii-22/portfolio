@@ -71,9 +71,9 @@ export const HeroSection: React.FC = () => {
           muted
           loop
           playsInline
-          className="h-screen w-auto max-w-none object-contain origin-right scale-95 md:scale-[0.98] lg:scale-100"
+          className="h-screen w-auto max-w-none object-contain origin-right -translate-x-20 sm:-translate-x-28 md:-translate-x-40 lg:-translate-x-56 xl:-translate-x-72 scale-95 md:scale-[0.98] lg:scale-100"
         >
-          <source src="/videos/hero.mp4" type="video/mp4" />
+          <source src="/videos/abhi.mp4" type="video/mp4" />
         </video>
 
         {/* Seamless Soft Left Edge Blend */}
@@ -118,7 +118,7 @@ export const HeroSection: React.FC = () => {
             className="text-xs sm:text-sm font-semibold tracking-[0.35em] uppercase text-[#EAD8C7] hover:opacity-75 transition-opacity"
             style={{ fontFamily: "'Montserrat', sans-serif" }}
           >
-            LOHITHA.
+            ABHISHEK E B.
           </a>
 
           {/* Navigation Links */}
@@ -173,17 +173,17 @@ export const HeroSection: React.FC = () => {
               >
                 {/* Line 1: I BUILD */}
                 <span className="block text-transparent bg-clip-text bg-gradient-to-b from-[#FFFFFF] via-[#D5CBC0] to-[#605448] drop-shadow-[0_4px_12px_rgba(0,0,0,0.85)]">
-                  I BUILD
+                  I TRANSFORM
                 </span>
 
                 {/* Line 2: DIGITAL */}
                 <span className="block text-transparent bg-clip-text bg-gradient-to-b from-[#F7E7C4] via-[#C99E5D] to-[#543B1A] drop-shadow-[0_8px_25px_rgba(201,158,93,0.35)]">
-                  DIGITAL
+                  IDEAS INTO
                 </span>
 
                 {/* Line 3: EXPERIENCES */}
                 <span className="block text-transparent bg-clip-text bg-gradient-to-b from-[#DFBE8A] via-[#9B7640] to-[#342410] drop-shadow-[0_10px_30px_rgba(155,118,64,0.4)]">
-                  EXPERIENCES
+                  CODE
                 </span>
               </h1>
             </motion.div>
@@ -194,7 +194,7 @@ export const HeroSection: React.FC = () => {
                 className="text-[10px] sm:text-[11px] md:text-xs font-normal tracking-[0.28em] uppercase text-[#C4B29E]"
                 style={{ fontFamily: "'Montserrat', sans-serif" }}
               >
-                FULL STACK DEVELOPER <span className="text-[#8C6D4F] mx-1">•</span> UI/UX DESIGNER <span className="text-[#8C6D4F] mx-1">•</span> DATA SCIENCE
+                FULL STACK DEVELOPER <span className="text-[#8C6D4F] mx-1">•</span> Frontend Developer<span className="text-[#8C6D4F] mx-1">•</span> Data Engineer
               </p>
             </motion.div>
 
@@ -205,7 +205,9 @@ export const HeroSection: React.FC = () => {
               style={{ fontFamily: "'Montserrat', sans-serif" }}
             >
               <p>
-                I turn bold ideas into seamless digital experiences.
+               I transform creative ideas into modern, functional, and user-friendly digital solutions.
+                I combine development, problem-solving, and technology to build meaningful applications.
+                  My goal is to turn every idea into clean code, great experiences, and real-world impact.
                 <br />
                 Where frontend meets powerful backend, and code transforms vision into impact.
               </p>
@@ -282,7 +284,7 @@ export const HeroSection: React.FC = () => {
                 letterSpacing: '0.04em',
               }}
             >
-              Lohitha
+              Abhishek
             </div>
           </motion.div>
         </div>
