@@ -8,7 +8,14 @@
   position: relative;
   width: 100%;
   padding-top: 4vh;
-  padding-bottom: 50vh;
+  padding-bottom: 50vh; /* Laptop runway */
+}
+
+/* Balanced mobile runway to remove the excessive gap without overlapping */
+@media (max-width: 768px) {
+  .scroll-stack-inner {
+    padding-bottom: 45vh;
+  }
 }
 
 .scroll-stack-card {
@@ -21,17 +28,12 @@
   transform-style: preserve-3d;
   -webkit-transform: translateZ(0);
   transform: translateZ(0);
-  margin-bottom: 80px; /* Default laptop card spacing */
+  margin-bottom: 80px;
 }
 
-/* Mobile-specific adjustments via CSS to avoid Vercel build/hydration mismatches */
 @media (max-width: 768px) {
-  .scroll-stack-inner {
-    padding-bottom: 25vh;
-  }
-  
   .scroll-stack-card {
-    margin-bottom: 40px;
+    margin-bottom: 30px;
   }
 }
 
