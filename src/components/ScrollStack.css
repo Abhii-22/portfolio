@@ -8,7 +8,7 @@
   position: relative;
   width: 100%;
   padding-top: 4vh;
-  padding-bottom: 35vh; /* Provides generous scrolling runway so cards stack cleanly and remain fully visible */
+  padding-bottom: 50vh;
 }
 
 .scroll-stack-card {
@@ -21,6 +21,18 @@
   transform-style: preserve-3d;
   -webkit-transform: translateZ(0);
   transform: translateZ(0);
+  margin-bottom: 80px; /* Default laptop card spacing */
+}
+
+/* Mobile-specific adjustments via CSS to avoid Vercel build/hydration mismatches */
+@media (max-width: 768px) {
+  .scroll-stack-inner {
+    padding-bottom: 25vh;
+  }
+  
+  .scroll-stack-card {
+    margin-bottom: 40px;
+  }
 }
 
 .scroll-stack-end {
