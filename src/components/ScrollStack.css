@@ -8,10 +8,9 @@
   position: relative;
   width: 100%;
   padding-top: 4vh;
-  padding-bottom: 50vh; /* Laptop runway */
+  padding-bottom: 50vh;
 }
 
-/* Balanced mobile runway to remove the excessive gap without overlapping */
 @media (max-width: 768px) {
   .scroll-stack-inner {
     padding-bottom: 45vh;
@@ -23,17 +22,20 @@
   width: 100%;
   box-sizing: border-box;
   transform-origin: top center;
-  will-change: transform, filter;
+  /* Hardware acceleration properties to prevent mobile vibration */
+  will-change: transform;
   backface-visibility: hidden;
-  transform-style: preserve-3d;
-  -webkit-transform: translateZ(0);
+  -webkit-backface-visibility: hidden;
   transform: translateZ(0);
+  -webkit-transform: translateZ(0);
+  perspective: 1000px;
+  -webkit-perspective: 1000px;
   margin-bottom: 80px;
 }
 
 @media (max-width: 768px) {
   .scroll-stack-card {
-    margin-bottom: 30px;
+    margin-bottom: 40px;
   }
 }
 
