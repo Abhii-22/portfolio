@@ -216,7 +216,7 @@ const ScrollStack: React.FC<ScrollStackProps> = ({
     return lenis;
   }, [handleScroll]);
 
-  useLayoutEffect(() => {
+  const recalculatePositions = useCallback(() => {
     const cards = Array.from(
       document.querySelectorAll('.scroll-stack-card')
     ) as HTMLElement[];
@@ -240,10 +240,22 @@ const ScrollStack: React.FC<ScrollStackProps> = ({
       card.style.perspective = '1000px';
     });
 
-    setupLenis();
     updateCardTransforms();
+  }, [itemDistance, updateCardTransforms]);
+
+  useLayoutEffect(() => {
+    recalculatePositions();
+    setupLenis();
+
+    const timer = setTimeout(() => {
+      recalculatePositions();
+    }, 250);
+
+    window.addEventListener('resize', recalculatePositions);
 
     return () => {
+      clearTimeout(timer);
+      window.removeEventListener('resize', recalculatePositions);
       if (animationFrameRef.current) {
         cancelAnimationFrame(animationFrameRef.current);
       }
@@ -256,20 +268,7 @@ const ScrollStack: React.FC<ScrollStackProps> = ({
       lastTransformsRef.current.clear();
       isUpdatingRef.current = false;
     };
-  }, [
-    itemDistance,
-    itemScale,
-    itemStackDistance,
-    stackPosition,
-    scaleEndPosition,
-    baseScale,
-    rotationAmount,
-    blurAmount,
-    useWindowScroll,
-    onStackComplete,
-    setupLenis,
-    updateCardTransforms,
-  ]);
+  }, [recalculatePositions, setupLenis]);
 
   return (
     <div className={`scroll-stack-scroller ${className}`.trim()} ref={scrollerRef}>
