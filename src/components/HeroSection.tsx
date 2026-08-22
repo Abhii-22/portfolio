@@ -47,8 +47,65 @@ export const HeroSection: React.FC = () => {
     return () => window.removeEventListener('mousemove', handleMouseMove);
   }, []);
 
+  // Fixed static fire ember configuration that never re-renders on mousemove
+  const fireEmbers = React.useMemo(() => {
+    return Array.from({ length: 30 }).map((_, i) => ({
+      id: i,
+      left: `${(i * 1.8) + (Math.random() * 3)}%`,
+      size: `${Math.random() * 2 + 1.2}px`,
+      duration: `${Math.random() * 4 + 8}s`, // 8s to 12s stable fall duration
+      delay: `${Math.random() * 8}s`,
+      opacity: Math.random() * 0.5 + 0.3,
+    }));
+  }, []);
+
   return (
     <section className="relative w-screen h-screen overflow-hidden bg-black text-[#E8DFD8] font-sans selection:bg-[#cbb59d] selection:text-black cursor-none">
+      
+      {/* ================= STABLE GPU-ACCELERATED FIRE EMBERS ================= */}
+      <div 
+        className="absolute inset-0 pointer-events-none z-10 overflow-hidden bg-transparent"
+        style={{ transform: 'translateZ(0)', willChange: 'contents' }}
+      >
+        {fireEmbers.map((ember) => (
+          <span
+            key={ember.id}
+            className="absolute rounded-full bg-gradient-to-t from-[#D4AF37] to-[#FF4500] shadow-[0_0_6px_#FF4500]"
+            style={{
+              left: ember.left,
+              top: '-20px',
+              width: ember.size,
+              height: `calc(${ember.size} * 3.5)`,
+              opacity: ember.opacity,
+              animation: `fallEmber ${ember.duration} linear infinite`,
+              animationDelay: ember.delay,
+              backfaceVisibility: 'hidden',
+              transform: 'translateZ(0)',
+            }}
+          />
+        ))}
+      </div>
+
+      {/* Inline Keyframes */}
+      <style>{`
+        @keyframes fallEmber {
+          0% {
+            transform: translateY(-20px) translateX(0px);
+            opacity: 0;
+          }
+          10% {
+            opacity: 0.7;
+          }
+          90% {
+            opacity: 0.5;
+          }
+          100% {
+            transform: translateY(105vh) translateX(10px);
+            opacity: 0;
+          }
+        }
+      `}</style>
+
       {/* ================= 1. MINIMAL CUSTOM CURSOR ================= */}
       {cursorPos.x >= 0 && (
         <motion.div
@@ -71,16 +128,16 @@ export const HeroSection: React.FC = () => {
           muted
           loop
           playsInline
-          className="h-screen w-screen md:w-auto max-w-none object-cover md:object-contain origin-right -translate-x-0 md:-translate-x-20 sm:-translate-x-28 md:-translate-x-40 lg:-translate-x-56 xl:-translate-x-72 scale-95 md:scale-[0.98] lg:scale-100"
+          className="h-screen w-screen md:w-auto max-w-none object-cover md:object-contain origin-right -translate-x-0 md:-translate-x-20 sm:-translate-x-28 md:-translate-x-40 lg:-translate-x-56 xl:-translate-x-72 scale-95 md:scale-[0.98] lg:scale-100 opacity-95"
         >
           <source src="/videos/abhi.mp4" type="video/mp4" />
         </video>
 
         {/* Seamless Soft Left Edge Blend */}
-        <div className="absolute inset-y-0 left-0 w-full md:w-1/2 bg-gradient-to-r from-black via-black/60 md:via-black/85 to-transparent pointer-events-none" />
+        <div className="absolute inset-y-0 left-0 w-full md:w-1/2 bg-gradient-to-r from-black via-black/70 md:via-black/90 to-transparent pointer-events-none" />
 
         {/* ================= 3. ANIMATED WATERMARK EMBLEM ================= */}
-        <div className="absolute bottom-6 right-6 lg:bottom-10 lg:right-12 pointer-events-none flex items-center justify-center z-10">
+        <div className="absolute bottom-6 right-6 lg:bottom-10 lg:right-12 pointer-events-none flex items-center justify-center z-20">
           <div className="relative flex items-center justify-center">
             <div className="absolute w-36 h-36 bg-black/85 rounded-full blur-xl" />
 
@@ -107,7 +164,7 @@ export const HeroSection: React.FC = () => {
       </div>
 
       {/* ================= 4. CONTENT LAYER ================= */}
-      <div className="relative z-10 flex flex-col justify-between h-full w-full px-6 sm:px-12 lg:px-16 pt-6 pb-8 pointer-events-none">
+      <div className="relative z-20 flex flex-col justify-between h-full w-full px-6 sm:px-12 lg:px-16 pt-6 pb-8 pointer-events-none">
         
         {/* Navigation Bar */}
         <header className="relative flex items-center justify-between w-full pointer-events-auto">
@@ -145,7 +202,7 @@ export const HeroSection: React.FC = () => {
             href="#contact"
             onMouseEnter={() => setIsHovered(true)}
             onMouseLeave={() => setIsHovered(false)}
-            className="group flex items-center space-x-2 text-[11px] tracking-[0.24em] font-light uppercase py-2 px-4 border border-[#8C6D4F]/50 hover:border-[#D4AF37] text-[#EAD8C7] transition-all duration-300 backdrop-blur-sm ml-auto md:ml-0"
+            className="group flex items-center space-x-2 text-[11px] tracking-[0.24em] font-light uppercase py-2 px-4 border border-[#8C6D4F]/50 hover:border-[#D4AF37] text-[#EAD8C7] transition-all duration-300 backdrop-blur-sm ml-auto md:ml-0 bg-black/50"
             style={{ fontFamily: "'Montserrat', sans-serif" }}
           >
             <span>LET&apos;S TALK</span>
@@ -171,17 +228,17 @@ export const HeroSection: React.FC = () => {
                 className="text-6xl sm:text-7xl md:text-8xl lg:text-[7.2rem] xl:text-[7.8rem] tracking-tight uppercase leading-[0.83]"
                 style={{ fontFamily: "'Bebas Neue', sans-serif" }}
               >
-                {/* Line 1: I BUILD */}
-                <span className="block text-transparent bg-clip-text bg-gradient-to-b from-[#FFFFFF] via-[#D5CBC0] to-[#605448] drop-shadow-[0_4px_12px_rgba(0,0,0,0.85)]">
+                {/* Line 1 */}
+                <span className="block text-transparent bg-clip-text bg-gradient-to-b from-[#FFFFFF] via-[#D5CBC0] to-[#605448] drop-shadow-[0_4px_12px_rgba(0,0,0,0.9)]">
                   I TRANSFORM
                 </span>
 
-                {/* Line 2: DIGITAL */}
+                {/* Line 2 */}
                 <span className="block text-transparent bg-clip-text bg-gradient-to-b from-[#F7E7C4] via-[#C99E5D] to-[#543B1A] drop-shadow-[0_8px_25px_rgba(201,158,93,0.35)]">
                   IDEAS INTO
                 </span>
 
-                {/* Line 3: EXPERIENCES */}
+                {/* Line 3 */}
                 <span className="block text-transparent bg-clip-text bg-gradient-to-b from-[#DFBE8A] via-[#9B7640] to-[#342410] drop-shadow-[0_10px_30px_rgba(155,118,64,0.4)]">
                   CODE
                 </span>
@@ -225,7 +282,7 @@ export const HeroSection: React.FC = () => {
                 onMouseEnter={() => setIsHovered(true)}
                 onMouseLeave={() => setIsHovered(false)}
                 whileHover={{ scale: 1.02 }}
-                className="relative inline-flex items-center space-x-3 px-6 sm:px-7 py-3.5 border border-[#8C6D4F] bg-[#120F0C]/80 hover:border-[#D4AF37] text-[#EAD8C7] hover:text-[#FFF5EB] text-[11px] font-medium tracking-[0.24em] uppercase transition-all duration-300 shadow-[0_0_25px_rgba(212,175,55,0.18)]"
+                className="relative inline-flex items-center space-x-3 px-6 sm:px-7 py-3.5 border border-[#8C6D4F] bg-black/90 hover:border-[#D4AF37] text-[#EAD8C7] hover:text-[#FFF5EB] text-[11px] font-medium tracking-[0.24em] uppercase transition-all duration-300 shadow-[0_0_25px_rgba(212,175,55,0.18)]"
               >
                 <div className="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-[#E8D7C5]/40 to-transparent pointer-events-none" />
                 <span>EXPLORE MY WORK</span>
@@ -242,7 +299,7 @@ export const HeroSection: React.FC = () => {
                 onMouseEnter={() => setIsHovered(true)}
                 onMouseLeave={() => setIsHovered(false)}
                 whileHover={{ scale: 1.02 }}
-                className="relative inline-flex items-center space-x-2 px-6 sm:px-7 py-3.5 border border-[#8C6D4F]/40 hover:border-[#8C6D4F] text-[#BFA895] hover:text-[#EAD8C7] text-[11px] font-medium tracking-[0.24em] uppercase transition-all duration-300"
+                className="relative inline-flex items-center space-x-2 px-6 sm:px-7 py-3.5 border border-[#8C6D4F]/40 hover:border-[#8C6D4F] text-[#BFA895] hover:text-[#EAD8C7] text-[11px] font-medium tracking-[0.24em] uppercase transition-all duration-300 bg-black/60"
               >
                 <span>DOWNLOAD RESUME</span>
                 <span className="transform transition-transform duration-300 group-hover:translate-y-0.5 text-xs">
