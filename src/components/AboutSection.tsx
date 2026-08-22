@@ -148,10 +148,10 @@ export const AboutSection: React.FC = () => {
                   className="text-3xl sm:text-4xl font-light text-[#F4EBE2] tracking-tight"
                   style={{ fontFamily: "'Bebas Neue', sans-serif" }}
                 >
-                  1200+
+                40 +
                 </span>
                 <span className="text-[10px] font-medium tracking-[0.22em] uppercase text-[#A8988B] mt-0.5">
-                  DSA Solved
+                 Industry-Grade Projects
                 </span>
               </div>
 
@@ -161,10 +161,10 @@ export const AboutSection: React.FC = () => {
                   className="text-3xl sm:text-4xl font-light text-[#D4AF37] tracking-tight"
                   style={{ fontFamily: "'Bebas Neue', sans-serif" }}
                 >
-                  9.07
+               
                 </span>
                 <span className="text-[10px] font-medium tracking-[0.22em] uppercase text-[#A8988B] mt-0.5">
-                  B.Tech CGPA
+                  
                 </span>
               </div>
 
@@ -174,10 +174,10 @@ export const AboutSection: React.FC = () => {
                   className="text-3xl sm:text-4xl font-light text-[#F4EBE2] tracking-tight"
                   style={{ fontFamily: "'Bebas Neue', sans-serif" }}
                 >
-                  40+
+                
                 </span>
                 <span className="text-[10px] font-medium tracking-[0.22em] uppercase text-[#A8988B] mt-0.5">
-                  Industry-Grade Projects
+                 
                 </span>
               </div>
 
@@ -187,10 +187,10 @@ export const AboutSection: React.FC = () => {
                   className="text-3xl sm:text-4xl font-light text-[#D4AF37] tracking-tight"
                   style={{ fontFamily: "'Bebas Neue', sans-serif" }}
                 >
-                  Top 100
+                 
                 </span>
                 <span className="text-[10px] font-medium tracking-[0.22em] uppercase text-[#A8988B] mt-0.5">
-                  Myntra Hackerramp
+               
                 </span>
               </div>
             </motion.div>

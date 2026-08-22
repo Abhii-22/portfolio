@@ -65,19 +65,19 @@ export const HeroSection: React.FC = () => {
       )}
 
       {/* ================= 2. FIXED VIDEO LAYER ================= */}
-      <div className="fixed inset-0 z-0 overflow-hidden pointer-events-none bg-black flex items-center justify-end">
+      <div className="fixed inset-0 z-0 overflow-hidden pointer-events-none bg-black flex items-center justify-center md:justify-end">
         <video
           autoPlay
           muted
           loop
           playsInline
-          className="h-screen w-auto max-w-none object-contain origin-right -translate-x-20 sm:-translate-x-28 md:-translate-x-40 lg:-translate-x-56 xl:-translate-x-72 scale-95 md:scale-[0.98] lg:scale-100"
+          className="h-screen w-screen md:w-auto max-w-none object-cover md:object-contain origin-right -translate-x-0 md:-translate-x-20 sm:-translate-x-28 md:-translate-x-40 lg:-translate-x-56 xl:-translate-x-72 scale-95 md:scale-[0.98] lg:scale-100"
         >
           <source src="/videos/abhi.mp4" type="video/mp4" />
         </video>
 
         {/* Seamless Soft Left Edge Blend */}
-        <div className="absolute inset-y-0 left-0 w-1/2 bg-gradient-to-r from-black via-black/85 to-transparent pointer-events-none" />
+        <div className="absolute inset-y-0 left-0 w-full md:w-1/2 bg-gradient-to-r from-black via-black/60 md:via-black/85 to-transparent pointer-events-none" />
 
         {/* ================= 3. ANIMATED WATERMARK EMBLEM ================= */}
         <div className="absolute bottom-6 right-6 lg:bottom-10 lg:right-12 pointer-events-none flex items-center justify-center z-10">
